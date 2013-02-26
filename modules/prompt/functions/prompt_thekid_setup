@@ -5,9 +5,9 @@
 function prompt_thekid_precmd {
   # Check for untracked files or updated submodules since vcs_info does not.
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    branch_format="%F{green}(%s:%F{cyan}%b%f%u%c%F{red}●%F{green})"
+    branch_format="%F{cyan}(%F{magenta}%s:%F{cyan}%b%f%u%c%F{red}●%F{cyan})"
   else
-    branch_format="%F{green}(%s:%F{cyan}%b%f%u%c%F{green})"
+    branch_format="%F{cyan}(%F{magenta}%s:%F{cyan}%b%f%u%c%F{cyan})"
   fi
 
   zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
@@ -53,7 +53,7 @@ function prompt_thekid_setup {
   zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
   # Define prompts.
-  PROMPT="%F{cyan}[%F{yellow}%n%F{blue}@%F{cyan}%m %F{blue}%~%f"'${vcs_info_msg_0_}'"%F{cyan}]%(?.%F{green}.%F{red})$%f "
+  PROMPT="%F{cyan}[%F{yellow}%n%F{blue}@%F{cyan}%m %F{blue}%~%f"'${vcs_info_msg_0_}'"%F{cyan}]%(?.%F{green}.%F{red})%(#.#.$)%f "
   RPROMPT=''
 }
 
