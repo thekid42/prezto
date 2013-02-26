@@ -12,3 +12,6 @@ fi
 
 # Customize to your needs...
 
+export PATH="$HOME/mcidas/bin:/home/mcidas/bin:$PATH"
+export MCPATH=$HOME/mcidas/data:$HOME/mcidas/help:~mcidas/data:~mcidas/help
+
