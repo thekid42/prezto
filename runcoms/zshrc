@@ -11,3 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+if [[ ! -z "$(which virtualenvwrapper.sh)" && -d "$HOME/.virtualenvs" ]]; then
+    export WORKON_HOME=~/.virtualenvs
+    source /usr/bin/virtualenvwrapper.sh
+fi
